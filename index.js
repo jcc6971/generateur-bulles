@@ -1,3 +1,4 @@
+// compteur bulles éclatées 
 const coutnerDisplay = document.querySelector("h3");
 let counter = 0;
 
@@ -16,6 +17,7 @@ bubble.style.height =size;
 bubble.style.top = Math.random()*100 +50 + "%";
 bubble.style.left =Math.random()*100 + "%";
 
+// alternance gauche/doite
 const plusMinus=Math.random() >0.5 ? 1: -1;
 bubble.style.setProperty('--left', Math.random() * 100 * plusMinus + "%");
 
@@ -25,6 +27,8 @@ bubble.addEventListener('click',()=>{
     coutnerDisplay.textContent=counter;
     bubble.remove()},);
 
+// disparition bulle apres 8 sec 
 setTimeout(() => {bubble.remove(); }, 8000);};
 
+// repetition plusieurs bulles toutes les 1sec
 setInterval(bubbleMaker, 1000) ;
